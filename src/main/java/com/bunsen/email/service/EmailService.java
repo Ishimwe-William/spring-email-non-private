@@ -27,16 +27,16 @@ public class EmailService {
         this.emailSender = emailSender;
     }
 
-    public void prepareAndSendEmail() throws MessagingException {
+    public void prepareAndSendEmail(String mailTo,String senderName,String subject,String body) throws MessagingException {
         String htmlTemplate="templates/emailTemplate.html";
-        String mailTo="bunsenplus.org@gmail.com";
+//        String mailTo="bunsenplus.org@gmail.com";
         initializeTemplateEngine();
 
-        context.setVariable("sender","Thymeleaf Email");
-        context.setVariable("mailTo",mailTo);
+        context.setVariable("sender",senderName);
+        context.setVariable("body",body);
 
         String htmlBody=templateEngine.process(htmlTemplate,context);
-        sendEmail(mailTo,"Bunsen Thymeleaf email demo",htmlBody);
+        sendEmail(mailTo,subject,htmlBody);
     }
 
     private void sendEmail(String mailTo,String subject,String mailBody) throws MessagingException {

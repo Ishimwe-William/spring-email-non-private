@@ -22,6 +22,7 @@ public class EmailApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		emailService.prepareAndSendEmail();
+		emailService.prepareAndSendEmail("bunsenplus.org@gmail.com","RFID Based Attendance System",
+				"PIN Confirmation","Confirmation PIN: 23534");
 	}
 }
