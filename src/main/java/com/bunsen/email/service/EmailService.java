@@ -19,7 +19,7 @@ public class EmailService {
     private static TemplateEngine templateEngine;
     private static Context context;
 
-    private JavaMailSender emailSender;
+    private final JavaMailSender emailSender;
     private final Logger LOG= LoggerFactory.getLogger(EmailService.class);
 
     @Autowired
