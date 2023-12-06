@@ -29,7 +29,6 @@ public class EmailService {
 
     public void prepareAndSendEmail(String mailTo,String senderName,String subject,String body) throws MessagingException {
         String htmlTemplate="templates/emailTemplate.html";
-//        String mailTo="bunsenplus.org@gmail.com";
         initializeTemplateEngine();
 
         context.setVariable("sender",senderName);
